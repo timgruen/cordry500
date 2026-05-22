@@ -25,12 +25,7 @@ body {
   min-height: 100vh;
 }
 
-/* ── LAYOUT ──────────────────────────────────────────────── */
-.page-wrap {
-  max-width: 500px;
-  margin: 0 auto;
-  padding-bottom: 48px;
-}
+.page-wrap { max-width: 500px; margin: 0 auto; padding-bottom: 48px; }
 
 /* ── HERO ────────────────────────────────────────────────── */
 .stripe {
@@ -40,15 +35,15 @@ body {
 .hero {
   background: var(--card);
   text-align: center;
-  padding: 24px 20px 20px;
+  padding: 22px 20px 18px;
   border-bottom: 1px solid var(--border);
 }
-.hero-flag   { font-size: 46px; line-height: 1; margin-bottom: 4px; }
-.hero-title  { font-size: 36px; font-weight: 900; letter-spacing: -1.5px; line-height: 1; }
+.hero-flag  { font-size: 46px; line-height: 1; margin-bottom: 4px; }
+.hero-title { font-size: 36px; font-weight: 900; letter-spacing: -1.5px; line-height: 1; }
 .hero-title span { color: var(--red); }
-.hero-sub    { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.hero-sub   { font-size: 13px; color: var(--muted); margin-top: 6px; }
 .hero-sub strong { color: var(--ink); }
-.hero-pill   {
+.hero-pill  {
   display: inline-flex; align-items: center; gap: 6px;
   margin-top: 12px;
   background: #fffbeb; border: 1.5px solid var(--gold);
@@ -56,21 +51,36 @@ body {
   font-size: 13px; font-weight: 700; color: #92400e;
 }
 .stripe-sm {
-  height: 4px; margin-top: 18px; opacity: 0.3;
+  height: 4px; margin-top: 16px; opacity: 0.3;
   background: repeating-linear-gradient(90deg, var(--red) 0px, var(--red) 12px, #111 12px, #111 24px);
 }
+
+/* ── TOP BUTTONS ─────────────────────────────────────────── */
+.top-btns {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  padding: 12px 12px 4px;
+}
+.top-btn {
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  background: var(--card); border: 1.5px solid var(--border);
+  border-radius: 12px; padding: 12px 10px;
+  font-size: 14px; font-weight: 700; color: var(--ink);
+  cursor: pointer; transition: background 0.15s, border-color 0.15s;
+  text-align: center;
+}
+.top-btn:hover { background: #f0f0f0; border-color: #ccc; }
+.top-btn .btn-icon { font-size: 18px; }
 
 /* ── SECTION LABELS ──────────────────────────────────────── */
 .section-label {
   font-size: 10px; font-weight: 800; letter-spacing: 2px;
   text-transform: uppercase; color: #999;
-  margin: 18px 16px 10px; padding-bottom: 6px;
+  margin: 16px 16px 10px; padding-bottom: 6px;
   border-bottom: 1px solid var(--border);
 }
 
 /* ── GROUP CARD ──────────────────────────────────────────── */
 .groups-wrap { padding: 0 12px; display: flex; flex-direction: column; gap: 10px; }
-
 .group-card {
   background: var(--card);
   border: 1.5px solid var(--border);
@@ -80,8 +90,7 @@ body {
 .group-head {
   display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
   padding: 9px 14px 7px;
-  background: #f8f8f8;
-  border-bottom: 1px solid #e8e8e8;
+  background: #f8f8f8; border-bottom: 1px solid #e8e8e8;
 }
 .group-pos  { font-size: 10px; font-weight: 800; color: #aaa; letter-spacing: 0.5px; text-transform: uppercase; flex-shrink: 0; }
 .group-name { font-size: 16px; font-weight: 800; color: var(--ink); text-align: right; flex: 1; }
@@ -90,40 +99,30 @@ body {
 .cars-row {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
   gap: 6px; padding: 10px 10px 8px;
-  background: #efefef;
-  border-bottom: 1px solid #e0e0e0;
+  background: #efefef; border-bottom: 1px solid #e0e0e0;
 }
 .car-img { height: auto; display: block; transition: transform 0.15s; }
 .car-img:hover { transform: scale(1.05); }
-.car-1   { width: min(340px, 90%); }
-.car-2   { width: min(195px, 44%); }
-.car-3   { width: min(150px, 43%); }
-.car-4   { width: min(150px, 43%); }
-.car-many{ width: min(140px, 29%); }
+.car-1    { width: min(340px, 90%); }
+.car-2    { width: min(195px, 44%); }
+.car-3    { width: min(150px, 43%); }
+.car-4    { width: min(150px, 43%); }
+.car-many { width: min(140px, 29%); }
 
 /* ── DRIVER ROWS ─────────────────────────────────────────── */
 .drivers-list { padding: 4px 12px 8px; }
 .driver-row {
   display: flex; align-items: center; gap: 6px;
-  padding: 6px 0;
-  border-bottom: 1px solid #f2f2f2;
+  padding: 6px 0; border-bottom: 1px solid #f2f2f2;
   cursor: pointer;
 }
 .driver-row:last-child { border-bottom: none; }
 .driver-row:hover { background: #fafafa; margin: 0 -12px; padding-left: 12px; padding-right: 12px; border-radius: 6px; }
 
-.d-num {
-  font-size: 11px; font-weight: 800; padding: 2px 6px;
-  border-radius: 4px; background: #eeeeee; color: #555;
-  flex-shrink: 0; white-space: nowrap;
-}
+.d-num  { font-size: 11px; font-weight: 800; padding: 2px 6px; border-radius: 4px; background: #eee; color: #555; flex-shrink: 0; white-space: nowrap; }
 .d-name { font-size: 14px; font-weight: 600; color: var(--ink); flex: 1; }
 .d-flag { font-size: 14px; }
-
-.badge {
-  font-size: 9px; font-weight: 800; padding: 2px 5px;
-  border-radius: 4px; flex-shrink: 0; white-space: nowrap;
-}
+.badge  { font-size: 9px; font-weight: 800; padding: 2px 5px; border-radius: 4px; flex-shrink: 0; white-space: nowrap; }
 .badge-w { background: #fffbeb; color: #92400e; border: 1px solid #fbbf24; }
 .badge-r { background: #ede9fe; color: #4f46e5; border: 1px solid #c4b5fd; }
 
@@ -138,37 +137,6 @@ body {
 }
 .info-btn:hover  { background: #c7d2fe; transform: scale(1.1); }
 .info-btn:active { transform: scale(0.95); }
-
-/* ── PAYOUT SECTION ──────────────────────────────────────── */
-.payout-wrap { padding: 0 12px; }
-.payout-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.payout-card {
-  background: var(--card); border: 1.5px solid var(--border); border-radius: 12px;
-  padding: 12px; display: flex; align-items: center; gap: 10px;
-}
-.p-icon { font-size: 22px; flex-shrink: 0; }
-.p-info { flex: 1; min-width: 0; }
-.p-name { font-size: 12px; font-weight: 700; line-height: 1.2; }
-.p-desc { font-size: 10px; color: #888; margin-top: 2px; line-height: 1.3; }
-.p-pct  { font-size: 22px; font-weight: 900; flex-shrink: 0; }
-.pct-gold { color: #b45309; }
-.pct-blue { color: #1d4ed8; }
-.pct-green{ color: #15803d; }
-
-/* ── HOW TO BID ──────────────────────────────────────────── */
-.how-wrap  { padding: 0 12px; }
-.how-card  { background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 16px; }
-.how-steps { display: flex; flex-direction: column; gap: 12px; }
-.how-step  { display: flex; gap: 12px; align-items: flex-start; }
-.step-num  {
-  width: 24px; height: 24px; border-radius: 50%;
-  background: var(--red); color: white;
-  font-size: 12px; font-weight: 800;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0; margin-top: 1px;
-}
-.step-text { font-size: 14px; color: #555; line-height: 1.5; }
-.step-text strong { color: var(--ink); }
 
 /* ── FOOTER ──────────────────────────────────────────────── */
 .footer {
@@ -200,60 +168,92 @@ body {
   transition: transform 0.3s cubic-bezier(0.32,0.72,0,1);
   -webkit-overflow-scrolling: touch;
 }
-.modal-backdrop.open .modal-sheet {
-  transform: translateY(0);
-}
+.modal-backdrop.open .modal-sheet { transform: translateY(0); }
 
 .modal-handle {
   width: 36px; height: 4px; border-radius: 2px;
   background: #ddd; margin: 10px auto 0;
 }
-.modal-car-wrap {
-  background: #efefef;
-  padding: 16px 20px 12px;
-  display: flex; justify-content: center;
-}
-.modal-car { max-width: 280px; width: 100%; height: auto; }
-
-.modal-body { padding: 16px 20px 32px; }
-
-.modal-header { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
-.modal-num {
-  font-size: 11px; font-weight: 800; padding: 3px 7px;
-  border-radius: 5px; background: #eee; color: #555;
-  flex-shrink: 0; margin-top: 4px;
-}
-.modal-name { font-size: 22px; font-weight: 900; line-height: 1.1; flex: 1; }
-.modal-flag { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
-
-.modal-badges { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
-.modal-badges .badge { font-size: 11px; padding: 3px 8px; }
-
-.modal-group {
-  font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
-  color: #aaa; margin-bottom: 2px;
-}
-.modal-group-name { font-size: 15px; font-weight: 800; color: var(--ink); margin-bottom: 4px; }
-.modal-reason {
-  font-size: 13px; color: #666; font-style: italic; line-height: 1.5;
-  margin-bottom: 14px; padding-bottom: 14px;
-  border-bottom: 1px solid #eee;
-}
-
-.modal-fact-label { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #bbb; margin-bottom: 6px; }
-.modal-fact { font-size: 15px; color: #333; line-height: 1.65; }
-
 .modal-close {
   position: absolute; top: 14px; right: 16px;
   width: 30px; height: 30px; border-radius: 50%;
   background: #f0f0f0; border: none; cursor: pointer;
   font-size: 16px; color: #666;
   display: flex; align-items: center; justify-content: center;
-  transition: background 0.15s;
 }
 .modal-close:hover { background: #e0e0e0; }
-
 .modal-sheet-inner { position: relative; }
+
+/* ── DRIVER MODAL CONTENT ────────────────────────────────── */
+.modal-driver-top {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 16px 20px 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.modal-headshot-wrap {
+  flex-shrink: 0; width: 90px; height: 110px;
+  border-radius: 10px; overflow: hidden;
+  background: #f0f0f0;
+  display: flex; align-items: flex-end; justify-content: center;
+}
+.modal-headshot {
+  width: 100%; height: 100%; object-fit: cover; object-position: top center;
+  display: block;
+}
+.modal-headshot.hidden { display: none; }
+.modal-driver-info { flex: 1; min-width: 0; padding-top: 2px; }
+.modal-header { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+.modal-num  { font-size: 11px; font-weight: 800; padding: 3px 7px; border-radius: 5px; background: #eee; color: #555; flex-shrink: 0; }
+.modal-flag { font-size: 20px; }
+.modal-name { font-size: 20px; font-weight: 900; line-height: 1.1; margin-bottom: 6px; }
+.modal-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+.modal-badges .badge { font-size: 11px; padding: 3px 8px; }
+
+.modal-car-wrap { background: #efefef; padding: 12px 20px 10px; display: flex; justify-content: center; }
+.modal-car { max-width: 260px; width: 100%; height: auto; }
+
+.modal-body { padding: 14px 20px 32px; }
+.modal-group-label { font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #bbb; margin-bottom: 2px; }
+.modal-group-name  { font-size: 15px; font-weight: 800; color: var(--ink); margin-bottom: 4px; }
+.modal-reason {
+  font-size: 13px; color: #666; font-style: italic; line-height: 1.5;
+  margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #eee;
+}
+.modal-fact-label { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #bbb; margin-bottom: 6px; }
+.modal-fact { font-size: 15px; color: #333; line-height: 1.65; }
+
+/* ── INFO MODAL (how to play / payout) ───────────────────── */
+.info-modal-body { padding: 20px 20px 36px; }
+.info-modal-title { font-size: 20px; font-weight: 900; margin-bottom: 4px; }
+.info-modal-sub   { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+
+/* payout cards inside modal */
+.payout-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+.payout-card {
+  background: #f8f8f8; border: 1.5px solid var(--border); border-radius: 12px;
+  padding: 12px; display: flex; align-items: center; gap: 10px;
+}
+.p-icon { font-size: 22px; flex-shrink: 0; }
+.p-info { flex: 1; min-width: 0; }
+.p-name { font-size: 12px; font-weight: 700; line-height: 1.2; }
+.p-desc { font-size: 10px; color: #888; margin-top: 2px; line-height: 1.3; }
+.p-pct  { font-size: 22px; font-weight: 900; flex-shrink: 0; }
+.pct-gold  { color: #b45309; }
+.pct-blue  { color: #1d4ed8; }
+.pct-green { color: #15803d; }
+
+/* how-to steps inside modal */
+.how-steps { display: flex; flex-direction: column; gap: 14px; }
+.how-step  { display: flex; gap: 12px; align-items: flex-start; }
+.step-num  {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--red); color: white;
+  font-size: 13px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.step-text { font-size: 15px; color: #444; line-height: 1.5; }
+.step-text strong { color: var(--ink); }
 </style>
 </head>
 <body>
@@ -270,152 +270,112 @@ body {
   <div class="stripe-sm"></div>
 </div>
 
+<!-- Top action buttons -->
+<div class="top-btns">
+  <button class="top-btn" onclick="openInfoModal('how')">
+    <span class="btn-icon">📋</span> How to Play
+  </button>
+  <button class="top-btn" onclick="openInfoModal('payout')">
+    <span class="btn-icon">💰</span> Payout Structure
+  </button>
+</div>
+
 <!-- Groups -->
 <div class="section-label">The Groups — Ordered by 2026 Qualifying Position</div>
 <div class="groups-wrap">
 
   <!-- P1: El Jefe -->
-  <div class="group-card" data-group="el-jefe">
-    <div class="group-head">
-      <span class="group-pos">P1 · 1 driver</span>
-      <span class="group-name">El Jefe</span>
-    </div>
+  <div class="group-card">
+    <div class="group-head"><span class="group-pos">P1 · 1 driver</span><span class="group-name">El Jefe</span></div>
     <div class="cars-row">
       <img class="car-img car-1" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/10-DHL-SS.png" alt="Palou #10" onerror="this.style.opacity=0.15">
     </div>
     <div class="drivers-list">
-      <div class="driver-row" onclick="openDriver('10')">
-        <span class="d-num">#10</span><span class="d-name">Alex Palou</span><span class="badge badge-w">W</span><span class="d-flag">🇪🇸</span><button class="info-btn" aria-label="Alex Palou facts">i</button>
-      </div>
+      <div class="driver-row" onclick="openDriver('10')"><span class="d-num">#10</span><span class="d-name">Alex Palou</span><span class="badge badge-w">W</span><span class="d-flag">🇪🇸</span><button class="info-btn" aria-label="Alex Palou facts">i</button></div>
     </div>
   </div>
 
   <!-- P2: Fuel Economy -->
-  <div class="group-card" data-group="fuel-economy">
-    <div class="group-head">
-      <span class="group-pos">P2 · 1 driver</span>
-      <span class="group-name">Fuel Economy</span>
-    </div>
+  <div class="group-card">
+    <div class="group-head"><span class="group-pos">P2 · 1 driver</span><span class="group-name">Fuel Economy</span></div>
     <div class="cars-row">
       <img class="car-img car-1" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/20-JavaHouse-SS.png" alt="Rossi #20" onerror="this.style.opacity=0.15">
     </div>
     <div class="drivers-list">
-      <div class="driver-row" onclick="openDriver('20')">
-        <span class="d-num">#20</span><span class="d-name">Alexander Rossi</span><span class="badge badge-w">W</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Alexander Rossi facts">i</button>
-      </div>
+      <div class="driver-row" onclick="openDriver('20')"><span class="d-num">#20</span><span class="d-name">Alexander Rossi</span><span class="badge badge-w">W</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Alexander Rossi facts">i</button></div>
     </div>
   </div>
 
   <!-- P3: Chi-Town Hustle -->
-  <div class="group-card" data-group="chitown">
-    <div class="group-head">
-      <span class="group-pos">P3 · 1 driver</span>
-      <span class="group-name">Chi-Town Hustle</span>
-    </div>
+  <div class="group-card">
+    <div class="group-head"><span class="group-pos">P3 · 1 driver</span><span class="group-name">Chi-Town Hustle</span></div>
     <div class="cars-row">
       <img class="car-img car-1" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/12-Verizon-SS.png" alt="Malukas #12" onerror="this.style.opacity=0.15">
     </div>
     <div class="drivers-list">
-      <div class="driver-row" onclick="openDriver('12')">
-        <span class="d-num">#12</span><span class="d-name">David Malukas</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="David Malukas facts">i</button>
-      </div>
+      <div class="driver-row" onclick="openDriver('12')"><span class="d-num">#12</span><span class="d-name">David Malukas</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="David Malukas facts">i</button></div>
     </div>
   </div>
 
   <!-- P4–5: Country Roads -->
-  <div class="group-card" data-group="country-roads">
-    <div class="group-head">
-      <span class="group-pos">P4–5 · 2 drivers</span>
-      <span class="group-name">Country Roads</span>
-    </div>
+  <div class="group-card">
+    <div class="group-head"><span class="group-pos">P4–5 · 2 drivers</span><span class="group-name">Country Roads</span></div>
     <div class="cars-row">
       <img class="car-img car-2" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/60-SiriusXM-MorganWallen-SS.png" alt="Rosenqvist #60" onerror="this.style.opacity=0.15">
       <img class="car-img car-2" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/14-HFOT-SS.png" alt="Ferrucci #14" onerror="this.style.opacity=0.15">
     </div>
     <div class="drivers-list">
-      <div class="driver-row" onclick="openDriver('60')">
-        <span class="d-num">#60</span><span class="d-name">Felix Rosenqvist</span><span class="d-flag">🇸🇪</span><button class="info-btn" aria-label="Felix Rosenqvist facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('14')">
-        <span class="d-num">#14</span><span class="d-name">Santino Ferrucci</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Santino Ferrucci facts">i</button>
-      </div>
+      <div class="driver-row" onclick="openDriver('60')"><span class="d-num">#60</span><span class="d-name">Felix Rosenqvist</span><span class="d-flag">🇸🇪</span><button class="info-btn" aria-label="Felix Rosenqvist facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('14')"><span class="d-num">#14</span><span class="d-name">Santino Ferrucci</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Santino Ferrucci facts">i</button></div>
     </div>
   </div>
 
   <!-- P6–7: Missile Launch -->
-  <div class="group-card" data-group="missile-launch">
-    <div class="group-head">
-      <span class="group-pos">P6–7 · 2 drivers</span>
-      <span class="group-name">Missile Launch</span>
-    </div>
+  <div class="group-card">
+    <div class="group-head"><span class="group-pos">P6–7 · 2 drivers</span><span class="group-name">Missile Launch</span></div>
     <div class="cars-row">
       <img class="car-img car-2" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/5-Arrow-SS.png" alt="O'Ward #5" onerror="this.style.opacity=0.15">
       <img class="car-img car-2" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/8-Sunoco-SS.png" alt="Simpson #8" onerror="this.style.opacity=0.15">
     </div>
     <div class="drivers-list">
-      <div class="driver-row" onclick="openDriver('5')">
-        <span class="d-num">#5</span><span class="d-name">Pato O'Ward</span><span class="d-flag">🇲🇽</span><button class="info-btn" aria-label="Pato O'Ward facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('8')">
-        <span class="d-num">#8</span><span class="d-name">Kyffin Simpson</span><span class="d-flag">🇰🇾</span><button class="info-btn" aria-label="Kyffin Simpson facts">i</button>
-      </div>
+      <div class="driver-row" onclick="openDriver('5')"><span class="d-num">#5</span><span class="d-name">Pato O'Ward</span><span class="d-flag">🇲🇽</span><button class="info-btn" aria-label="Pato O'Ward facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('8')"><span class="d-num">#8</span><span class="d-name">Kyffin Simpson</span><span class="d-flag">🇰🇾</span><button class="info-btn" aria-label="Kyffin Simpson facts">i</button></div>
     </div>
   </div>
 
   <!-- P8–10: Ice Ice Baby -->
-  <div class="group-card" data-group="ice-ice-baby">
-    <div class="group-head">
-      <span class="group-pos">P8–10 · 3 drivers</span>
-      <span class="group-name">Ice Ice Baby</span>
-    </div>
+  <div class="group-card">
+    <div class="group-head"><span class="group-pos">P8–10 · 3 drivers</span><span class="group-name">Ice Ice Baby</span></div>
     <div class="cars-row">
       <img class="car-img car-3" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/23-Kingspan-SS.png" alt="Daly #23" onerror="this.style.opacity=0.15">
       <img class="car-img car-3" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/3-Pennzoil-SS.png" alt="McLaughlin #3" onerror="this.style.opacity=0.15">
       <img class="car-img car-3" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/9-PNCBank-SS.png" alt="Dixon #9" onerror="this.style.opacity=0.15">
     </div>
     <div class="drivers-list">
-      <div class="driver-row" onclick="openDriver('23')">
-        <span class="d-num">#23</span><span class="d-name">Conor Daly</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Conor Daly facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('3')">
-        <span class="d-num">#3</span><span class="d-name">Scott McLaughlin</span><span class="d-flag">🇳🇿</span><button class="info-btn" aria-label="Scott McLaughlin facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('9')">
-        <span class="d-num">#9</span><span class="d-name">Scott Dixon</span><span class="badge badge-w">W</span><span class="d-flag">🇳🇿</span><button class="info-btn" aria-label="Scott Dixon facts">i</button>
-      </div>
+      <div class="driver-row" onclick="openDriver('23')"><span class="d-num">#23</span><span class="d-name">Conor Daly</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Conor Daly facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('3')"><span class="d-num">#3</span><span class="d-name">Scott McLaughlin</span><span class="d-flag">🇳🇿</span><button class="info-btn" aria-label="Scott McLaughlin facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('9')"><span class="d-num">#9</span><span class="d-name">Scott Dixon</span><span class="badge badge-w">W</span><span class="d-flag">🇳🇿</span><button class="info-btn" aria-label="Scott Dixon facts">i</button></div>
     </div>
   </div>
 
   <!-- P11–13: Home Turf -->
-  <div class="group-card" data-group="home-turf">
-    <div class="group-head">
-      <span class="group-pos">P11–13 · 3 drivers</span>
-      <span class="group-name">Home Turf</span>
-    </div>
+  <div class="group-card">
+    <div class="group-head"><span class="group-pos">P11–13 · 3 drivers</span><span class="group-name">Home Turf</span></div>
     <div class="cars-row">
       <img class="car-img car-3" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/76-Wedbush-SS.png" alt="VeeKay #76" onerror="this.style.opacity=0.15">
       <img class="car-img car-3" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/75-Amada-SS.png" alt="Sato #75" onerror="this.style.opacity=0.15">
       <img class="car-img car-3" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/33-Slimfast-SS.png" alt="Carpenter #33" onerror="this.style.opacity=0.15">
     </div>
     <div class="drivers-list">
-      <div class="driver-row" onclick="openDriver('76')">
-        <span class="d-num">#76</span><span class="d-name">Rinus VeeKay</span><span class="d-flag">🇳🇱</span><button class="info-btn" aria-label="Rinus VeeKay facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('75')">
-        <span class="d-num">#75</span><span class="d-name">Takuma Sato</span><span class="badge badge-w">W×2</span><span class="d-flag">🇯🇵</span><button class="info-btn" aria-label="Takuma Sato facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('33')">
-        <span class="d-num">#33</span><span class="d-name">Ed Carpenter</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Ed Carpenter facts">i</button>
-      </div>
+      <div class="driver-row" onclick="openDriver('76')"><span class="d-num">#76</span><span class="d-name">Rinus VeeKay</span><span class="d-flag">🇳🇱</span><button class="info-btn" aria-label="Rinus VeeKay facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('75')"><span class="d-num">#75</span><span class="d-name">Takuma Sato</span><span class="badge badge-w">W×2</span><span class="d-flag">🇯🇵</span><button class="info-btn" aria-label="Takuma Sato facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('33')"><span class="d-num">#33</span><span class="d-name">Ed Carpenter</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Ed Carpenter facts">i</button></div>
     </div>
   </div>
 
   <!-- P14–17: Spider-Man's Web -->
-  <div class="group-card" data-group="spidermans-web">
-    <div class="group-head">
-      <span class="group-pos">P14–17 · 4 drivers</span>
-      <span class="group-name">Spider-Man's Web</span>
-    </div>
+  <div class="group-card">
+    <div class="group-head"><span class="group-pos">P14–17 · 4 drivers</span><span class="group-name">Spider-Man's Web</span></div>
     <div class="cars-row">
       <img class="car-img car-4" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/06-Cliffs-SS.png" alt="Castroneves #06" onerror="this.style.opacity=0.15">
       <img class="car-img car-4" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/21-Splenda-SS.png" alt="Rasmussen #21" onerror="this.style.opacity=0.15">
@@ -423,27 +383,16 @@ body {
       <img class="car-img car-4" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/28-Phoenix-SS.png" alt="Ericsson #28" onerror="this.style.opacity=0.15">
     </div>
     <div class="drivers-list">
-      <div class="driver-row" onclick="openDriver('06')">
-        <span class="d-num">#06</span><span class="d-name">Hélio Castroneves</span><span class="badge badge-w">W×4</span><span class="d-flag">🇧🇷</span><button class="info-btn" aria-label="Hélio Castroneves facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('21')">
-        <span class="d-num">#21</span><span class="d-name">Christian Rasmussen</span><span class="d-flag">🇩🇰</span><button class="info-btn" aria-label="Christian Rasmussen facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('66')">
-        <span class="d-num">#66</span><span class="d-name">Marcus Armstrong</span><span class="d-flag">🇳🇿</span><button class="info-btn" aria-label="Marcus Armstrong facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('28')">
-        <span class="d-num">#28</span><span class="d-name">Marcus Ericsson</span><span class="badge badge-w">W</span><span class="d-flag">🇸🇪</span><button class="info-btn" aria-label="Marcus Ericsson facts">i</button>
-      </div>
+      <div class="driver-row" onclick="openDriver('06')"><span class="d-num">#06</span><span class="d-name">Hélio Castroneves</span><span class="badge badge-w">W×4</span><span class="d-flag">🇧🇷</span><button class="info-btn" aria-label="Hélio Castroneves facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('21')"><span class="d-num">#21</span><span class="d-name">Christian Rasmussen</span><span class="d-flag">🇩🇰</span><button class="info-btn" aria-label="Christian Rasmussen facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('66')"><span class="d-num">#66</span><span class="d-name">Marcus Armstrong</span><span class="d-flag">🇳🇿</span><button class="info-btn" aria-label="Marcus Armstrong facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('28')"><span class="d-num">#28</span><span class="d-name">Marcus Ericsson</span><span class="badge badge-w">W</span><span class="d-flag">🇸🇪</span><button class="info-btn" aria-label="Marcus Ericsson facts">i</button></div>
     </div>
   </div>
 
   <!-- P18–24: Sleeping Giants -->
-  <div class="group-card" data-group="sleeping-giants">
-    <div class="group-head">
-      <span class="group-pos">P18–24 · 7 drivers</span>
-      <span class="group-name">Sleeping Giants</span>
-    </div>
+  <div class="group-card">
+    <div class="group-head"><span class="group-pos">P18–24 · 7 drivers</span><span class="group-name">Sleeping Giants</span></div>
     <div class="cars-row">
       <img class="car-img car-many" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/7-Velo-SS.png" alt="Lundgaard #7" onerror="this.style.opacity=0.15">
       <img class="car-img car-many" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/26-TWGAI-SS.png" alt="Power #26" onerror="this.style.opacity=0.15">
@@ -454,36 +403,19 @@ body {
       <img class="car-img car-many" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/18-BMAX-SS.png" alt="Grosjean #18" onerror="this.style.opacity=0.15">
     </div>
     <div class="drivers-list">
-      <div class="driver-row" onclick="openDriver('7')">
-        <span class="d-num">#7</span><span class="d-name">Christian Lundgaard</span><span class="d-flag">🇩🇰</span><button class="info-btn" aria-label="Christian Lundgaard facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('26')">
-        <span class="d-num">#26</span><span class="d-name">Will Power</span><span class="badge badge-w">W</span><span class="d-flag">🇦🇺</span><button class="info-btn" aria-label="Will Power facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('6')">
-        <span class="d-num">#6</span><span class="d-name">Nolan Siegel</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Nolan Siegel facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('45')">
-        <span class="d-num">#45</span><span class="d-name">Louis Foster</span><span class="d-flag">🇬🇧</span><button class="info-btn" aria-label="Louis Foster facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('31')">
-        <span class="d-num">#31</span><span class="d-name">Ryan Hunter-Reay</span><span class="badge badge-w">W</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Ryan Hunter-Reay facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('2')">
-        <span class="d-num">#2</span><span class="d-name">Josef Newgarden</span><span class="badge badge-w">W×2</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Josef Newgarden facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('18')">
-        <span class="d-num">#18</span><span class="d-name">Romain Grosjean</span><span class="d-flag">🇫🇷</span><button class="info-btn" aria-label="Romain Grosjean facts">i</button>
-      </div>
+      <div class="driver-row" onclick="openDriver('7')"><span class="d-num">#7</span><span class="d-name">Christian Lundgaard</span><span class="d-flag">🇩🇰</span><button class="info-btn" aria-label="Christian Lundgaard facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('26')"><span class="d-num">#26</span><span class="d-name">Will Power</span><span class="badge badge-w">W</span><span class="d-flag">🇦🇺</span><button class="info-btn" aria-label="Will Power facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('6')"><span class="d-num">#6</span><span class="d-name">Nolan Siegel</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Nolan Siegel facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('45')"><span class="d-num">#45</span><span class="d-name">Louis Foster</span><span class="d-flag">🇬🇧</span><button class="info-btn" aria-label="Louis Foster facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('31')"><span class="d-num">#31</span><span class="d-name">Ryan Hunter-Reay</span><span class="badge badge-w">W</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Ryan Hunter-Reay facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('2')"><span class="d-num">#2</span><span class="d-name">Josef Newgarden</span><span class="badge badge-w">W×2</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Josef Newgarden facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('18')"><span class="d-num">#18</span><span class="d-name">Romain Grosjean</span><span class="d-flag">🇫🇷</span><button class="info-btn" aria-label="Romain Grosjean facts">i</button></div>
     </div>
   </div>
 
   <!-- P25–33: Long Shot Lottery -->
-  <div class="group-card" data-group="long-shot">
-    <div class="group-head">
-      <span class="group-pos">P25–33 · 9 drivers</span>
-      <span class="group-name">Long Shot Lottery</span>
-    </div>
+  <div class="group-card">
+    <div class="group-head"><span class="group-pos">P25–33 · 9 drivers</span><span class="group-name">Long Shot Lottery</span></div>
     <div class="cars-row">
       <img class="car-img car-many" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/27-SamsClub-SS.png" alt="Kirkwood #27" onerror="this.style.opacity=0.15">
       <img class="car-img car-many" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/11-elf-SS.png" alt="Legge #11" onerror="this.style.opacity=0.15">
@@ -496,114 +428,53 @@ body {
       <img class="car-img car-many" src="https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/24-INVST-SS.png" alt="Harvey #24" onerror="this.style.opacity=0.15">
     </div>
     <div class="drivers-list">
-      <div class="driver-row" onclick="openDriver('27')">
-        <span class="d-num">#27</span><span class="d-name">Kyle Kirkwood</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Kyle Kirkwood facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('11')">
-        <span class="d-num">#11</span><span class="d-name">Katherine Legge</span><span class="d-flag">🇬🇧</span><button class="info-btn" aria-label="Katherine Legge facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('47')">
-        <span class="d-num">#47</span><span class="d-name">Mick Schumacher</span><span class="badge badge-r">R</span><span class="d-flag">🇩🇪</span><button class="info-btn" aria-label="Mick Schumacher facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('15')">
-        <span class="d-num">#15</span><span class="d-name">Graham Rahal</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Graham Rahal facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('19')">
-        <span class="d-num">#19</span><span class="d-name">Dennis Hauger</span><span class="badge badge-r">R</span><span class="d-flag">🇳🇴</span><button class="info-btn" aria-label="Dennis Hauger facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('51')">
-        <span class="d-num">#51</span><span class="d-name">Jacob Abel</span><span class="badge badge-r">R</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Jacob Abel facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('77')">
-        <span class="d-num">#77</span><span class="d-name">Sting Ray Robb</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Sting Ray Robb facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('4')">
-        <span class="d-num">#4</span><span class="d-name">Caio Collet</span><span class="badge badge-r">R</span><span class="d-flag">🇧🇷</span><button class="info-btn" aria-label="Caio Collet facts">i</button>
-      </div>
-      <div class="driver-row" onclick="openDriver('24')">
-        <span class="d-num">#24</span><span class="d-name">Jack Harvey</span><span class="d-flag">🇬🇧</span><button class="info-btn" aria-label="Jack Harvey facts">i</button>
-      </div>
+      <div class="driver-row" onclick="openDriver('27')"><span class="d-num">#27</span><span class="d-name">Kyle Kirkwood</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Kyle Kirkwood facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('11')"><span class="d-num">#11</span><span class="d-name">Katherine Legge</span><span class="d-flag">🇬🇧</span><button class="info-btn" aria-label="Katherine Legge facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('47')"><span class="d-num">#47</span><span class="d-name">Mick Schumacher</span><span class="badge badge-r">R</span><span class="d-flag">🇩🇪</span><button class="info-btn" aria-label="Mick Schumacher facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('15')"><span class="d-num">#15</span><span class="d-name">Graham Rahal</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Graham Rahal facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('19')"><span class="d-num">#19</span><span class="d-name">Dennis Hauger</span><span class="badge badge-r">R</span><span class="d-flag">🇳🇴</span><button class="info-btn" aria-label="Dennis Hauger facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('51')"><span class="d-num">#51</span><span class="d-name">Jacob Abel</span><span class="badge badge-r">R</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Jacob Abel facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('77')"><span class="d-num">#77</span><span class="d-name">Sting Ray Robb</span><span class="d-flag">🇺🇸</span><button class="info-btn" aria-label="Sting Ray Robb facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('4')"><span class="d-num">#4</span><span class="d-name">Caio Collet</span><span class="badge badge-r">R</span><span class="d-flag">🇧🇷</span><button class="info-btn" aria-label="Caio Collet facts">i</button></div>
+      <div class="driver-row" onclick="openDriver('24')"><span class="d-num">#24</span><span class="d-name">Jack Harvey</span><span class="d-flag">🇬🇧</span><button class="info-btn" aria-label="Jack Harvey facts">i</button></div>
     </div>
   </div>
 
 </div><!-- /groups-wrap -->
 
-<!-- Payout -->
-<div class="section-label">Payout Structure — Split the Cash Pot</div>
-<div class="payout-wrap">
-  <div class="payout-grid">
-    <div class="payout-card">
-      <div class="p-icon">🏆</div>
-      <div class="p-info"><div class="p-name">Race Winner</div><div class="p-desc">Winning driver's group</div></div>
-      <div class="p-pct pct-gold">70%</div>
-    </div>
-    <div class="payout-card">
-      <div class="p-icon">🔄</div>
-      <div class="p-info"><div class="p-name">Most Laps Led</div><div class="p-desc">If different from winner</div></div>
-      <div class="p-pct pct-blue">6%</div>
-    </div>
-    <div class="payout-card">
-      <div class="p-icon">🎓</div>
-      <div class="p-info"><div class="p-name">Highest Rookie</div><div class="p-desc">Best first-year finish</div></div>
-      <div class="p-pct pct-blue">6%</div>
-    </div>
-    <div class="payout-card">
-      <div class="p-icon">🚀</div>
-      <div class="p-info"><div class="p-name">Biggest Mover</div><div class="p-desc">Most positions gained</div></div>
-      <div class="p-pct pct-green">6%</div>
-    </div>
-    <div class="payout-card">
-      <div class="p-icon">⚡</div>
-      <div class="p-info"><div class="p-name">Fastest Lap</div><div class="p-desc">Fastest single lap</div></div>
-      <div class="p-pct pct-green">6%</div>
-    </div>
-    <div class="payout-card">
-      <div class="p-icon">💥</div>
-      <div class="p-info"><div class="p-name">First Out</div><div class="p-desc">First car to retire</div></div>
-      <div class="p-pct pct-green">6%</div>
-    </div>
-  </div>
-</div>
-
-<!-- How to Bid -->
-<div class="section-label" style="margin-top:6px;">How to Bid — Reply in the Group Chat</div>
-<div class="how-wrap">
-  <div class="how-card">
-    <div class="how-steps">
-      <div class="how-step"><div class="step-num">1</div><div class="step-text"><strong>Pick a group</strong> you want to own. You can bid on multiple groups.</div></div>
-      <div class="how-step"><div class="step-num">2</div><div class="step-text"><strong>Bid in cash.</strong> Reply with your group + amount (e.g. "Sleeping Giants — $6").</div></div>
-      <div class="how-step"><div class="step-num">3</div><div class="step-text"><strong>Outbid each other</strong> by at least $1. Bidding closes at <strong>green flag</strong> on race day.</div></div>
-      <div class="how-step"><div class="step-num">4</div><div class="step-text"><strong>Pay up at the watch party.</strong> Cash or Venmo accepted. Pot = all winning bids combined.</div></div>
-    </div>
-  </div>
-</div>
-
 <div class="footer">
   <span class="badge badge-w">W</span> Past Indy 500 winner &nbsp;·&nbsp;
   <span class="badge badge-w">W×N</span> Multiple-time winner &nbsp;·&nbsp;
   <span class="badge badge-r">R</span> 2026 rookie
-  <br>Tap any driver row for fun facts 👆
+  <br>Tap any driver for fun facts 👆
 </div>
 
 </div><!-- /page-wrap -->
 
-<!-- Modal -->
-<div class="modal-backdrop" id="backdrop" onclick="handleBackdropClick(event)">
-  <div class="modal-sheet" id="sheet" role="dialog" aria-modal="true">
+<!-- ── DRIVER MODAL ────────────────────────────────────────── -->
+<div class="modal-backdrop" id="driver-backdrop" onclick="handleBackdropClick(event,'driver-backdrop')">
+  <div class="modal-sheet" id="driver-sheet" role="dialog" aria-modal="true" aria-label="Driver info">
     <div class="modal-sheet-inner">
       <div class="modal-handle"></div>
-      <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+      <button class="modal-close" onclick="closeModal('driver-backdrop')" aria-label="Close">✕</button>
+      <div class="modal-driver-top">
+        <div class="modal-headshot-wrap">
+          <img class="modal-headshot" id="modal-headshot" src="" alt="">
+        </div>
+        <div class="modal-driver-info">
+          <div class="modal-name" id="modal-name"></div>
+          <div class="modal-header">
+            <span class="modal-num" id="modal-num"></span>
+            <span class="modal-flag" id="modal-flag"></span>
+          </div>
+          <div class="modal-badges" id="modal-badges"></div>
+        </div>
+      </div>
       <div class="modal-car-wrap">
         <img class="modal-car" id="modal-car" src="" alt="" onerror="this.style.display='none'">
       </div>
       <div class="modal-body">
-        <div class="modal-header">
-          <span class="modal-num" id="modal-num"></span>
-          <span class="modal-name" id="modal-name"></span>
-          <span class="modal-flag" id="modal-flag"></span>
-        </div>
-        <div class="modal-badges" id="modal-badges"></div>
-        <div class="modal-group">Group</div>
+        <div class="modal-group-label">Group</div>
         <div class="modal-group-name" id="modal-group-name"></div>
         <div class="modal-reason" id="modal-reason"></div>
         <div class="modal-fact-label">Fun Fact</div>
@@ -613,283 +484,98 @@ body {
   </div>
 </div>
 
+<!-- ── INFO MODAL (How to Play / Payout) ─────────────────── -->
+<div class="modal-backdrop" id="info-backdrop" onclick="handleBackdropClick(event,'info-backdrop')">
+  <div class="modal-sheet" id="info-sheet" role="dialog" aria-modal="true" aria-label="Info">
+    <div class="modal-sheet-inner">
+      <div class="modal-handle"></div>
+      <button class="modal-close" onclick="closeModal('info-backdrop')" aria-label="Close">✕</button>
+
+      <!-- How to Play panel -->
+      <div class="info-modal-body" id="panel-how">
+        <div class="info-modal-title">📋 How to Play</div>
+        <div class="info-modal-sub">The Cordry 500 — Family Cash Pool</div>
+        <div class="how-steps">
+          <div class="how-step"><div class="step-num">1</div><div class="step-text"><strong>Pick a group</strong> you want to own. You can bid on multiple groups.</div></div>
+          <div class="how-step"><div class="step-num">2</div><div class="step-text"><strong>Bid in cash.</strong> Reply with your group + amount (e.g. "Sleeping Giants — $6").</div></div>
+          <div class="how-step"><div class="step-num">3</div><div class="step-text"><strong>Outbid each other</strong> by at least $1. Bidding closes at <strong>green flag</strong> on race day.</div></div>
+          <div class="how-step"><div class="step-num">4</div><div class="step-text"><strong>Give money to Liz.</strong></div></div>
+        </div>
+      </div>
+
+      <!-- Payout panel -->
+      <div class="info-modal-body" id="panel-payout" style="display:none">
+        <div class="info-modal-title">💰 Payout Structure</div>
+        <div class="info-modal-sub">Pot = all winning bids combined</div>
+        <div class="payout-grid">
+          <div class="payout-card"><div class="p-icon">🏆</div><div class="p-info"><div class="p-name">Race Winner</div><div class="p-desc">Winning driver's group</div></div><div class="p-pct pct-gold">70%</div></div>
+          <div class="payout-card"><div class="p-icon">🔄</div><div class="p-info"><div class="p-name">Most Laps Led</div><div class="p-desc">If different from winner</div></div><div class="p-pct pct-blue">6%</div></div>
+          <div class="payout-card"><div class="p-icon">🎓</div><div class="p-info"><div class="p-name">Highest Rookie</div><div class="p-desc">Best first-year finish</div></div><div class="p-pct pct-blue">6%</div></div>
+          <div class="payout-card"><div class="p-icon">🚀</div><div class="p-info"><div class="p-name">Biggest Mover</div><div class="p-desc">Most positions gained</div></div><div class="p-pct pct-green">6%</div></div>
+          <div class="payout-card"><div class="p-icon">⚡</div><div class="p-info"><div class="p-name">Fastest Lap</div><div class="p-desc">Fastest single lap</div></div><div class="p-pct pct-green">6%</div></div>
+          <div class="payout-card"><div class="p-icon">💥</div><div class="p-info"><div class="p-name">First Out</div><div class="p-desc">First car to retire</div></div><div class="p-pct pct-green">6%</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <script>
+const HS = 'https://www.indycar.com/-/media/IndyCar/Drivers/IndyCar-Series/FullBody/';
+
 const DRIVERS = {
-  '10': {
-    name: 'Alex Palou', flag: '🇪🇸', num: '10',
-    badges: [{type:'w', label:'W'}],
-    group: 'El Jefe',
-    reason: "Palou starts from pole as defending champion. There's only one boss at this race.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/10-DHL-SS.png',
-    fact: "Three-time IndyCar champion who won the 2025 Indy 500 from pole. If the race runs clean, he's the most likely person to repeat — and the most expensive group to own."
-  },
-  '20': {
-    name: 'Alexander Rossi', flag: '🇺🇸', num: '20',
-    badges: [{type:'w', label:'W'}],
-    group: 'Fuel Economy',
-    reason: "Rossi won his first Indy 500 by literally coasting across the finish line after his car ran dry.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/20-JavaHouse-SS.png',
-    fact: "Won his debut Indy 500 in 2016 by running out of fuel and still winning. Former F1 reserve driver who found his calling at 500 miles per race."
-  },
-  '12': {
-    name: 'David Malukas', flag: '🇺🇸', num: '12',
-    badges: [],
-    group: 'Chi-Town Hustle',
-    reason: "Malukas is Chicago's own hometown racer, grinding his way toward a breakthrough win.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/12-Verizon-SS.png',
-    fact: "Born and raised in Chicago — one of the few American-born title contenders in the field. Finished runner-up in the 2025 Indy 500 and is absolutely due for that top step."
-  },
-  '60': {
-    name: 'Felix Rosenqvist', flag: '🇸🇪', num: '60',
-    badges: [],
-    group: 'Country Roads',
-    reason: "Rosenqvist's #60 car sports a Morgan Wallen country music livery — the most visually charismatic car at the Speedway.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/60-SiriusXM-MorganWallen-SS.png',
-    fact: "Finished 2nd in the 2023 Indy 500 and has been knocking on the door ever since. The Morgan Wallen livery means fans have been taking photos of this car all week."
-  },
-  '14': {
-    name: 'Santino Ferrucci', flag: '🇺🇸', num: '14',
-    badges: [],
-    group: 'Country Roads',
-    reason: "Rosenqvist's #60 car sports a Morgan Wallen country music livery — the most visually charismatic car at the Speedway.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/14-HFOT-SS.png',
-    fact: "Rhode Islander who has quietly become one of the best pure oval racers in the field. Finished 3rd in 2023 and races without fear in the heaviest traffic on the grid."
-  },
-  '5': {
-    name: "Pato O'Ward", flag: '🇲🇽', num: '5',
-    badges: [],
-    group: 'Missile Launch',
-    reason: 'O\'Ward\'s nickname is "The Mexican Missile" — and Simpson is launching his IndyCar career from P7.',
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/5-Arrow-SS.png',
-    fact: "Has finished 2nd at Indy twice and is statistically overdue for a win. His McLaren deal even scored him a test in a real Formula 1 car. The most frustrated nearly-man at the Brickyard."
-  },
-  '8': {
-    name: 'Kyffin Simpson', flag: '🇰🇾', num: '8',
-    badges: [],
-    group: 'Missile Launch',
-    reason: 'O\'Ward\'s nickname is "The Mexican Missile" — and Simpson is launching his IndyCar career from P7.',
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/8-Sunoco-SS.png',
-    fact: "Carries one of the most unique passports in motorsport — a Cayman Islander making his third Indy 500 start. Won the Indy Lights championship before joining the Chip Ganassi powerhouse."
-  },
-  '23': {
-    name: 'Conor Daly', flag: '🇺🇸', num: '23',
-    badges: [],
-    group: 'Ice Ice Baby',
-    reason: "Dixon's nickname is \"The Iceman\" — two ice-cold Kiwis and one famously charismatic American walk into a race.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/23-Kingspan-SS.png',
-    fact: "Son of TV racing analyst Derek Daly. Once crowdfunded his entire Indy 500 entry from fans. Universally considered the most fun driver in the paddock — and he's quicker than you think."
-  },
-  '3': {
-    name: 'Scott McLaughlin', flag: '🇳🇿', num: '3',
-    badges: [],
-    group: 'Ice Ice Baby',
-    reason: "Dixon's nickname is \"The Iceman\" — two ice-cold Kiwis and one famously charismatic American walk into a race.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/3-Pennzoil-SS.png',
-    fact: "Three-time V8 Supercars champion who traded Australian touring car wars for American open-wheel. Won the 2021 Indy 500 Rookie of the Year and improves every single year."
-  },
-  '9': {
-    name: 'Scott Dixon', flag: '🇳🇿', num: '9',
-    badges: [{type:'w', label:'W'}],
-    group: 'Ice Ice Baby',
-    reason: "Dixon's nickname is \"The Iceman\" — two ice-cold Kiwis and one famously charismatic American walk into a race.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/9-PNCBank-SS.png',
-    fact: "Six-time IndyCar champion with a career spanning over 20 years at Indy. At 45, he still doesn't make mistakes. If the race gets strategic, Dixon wins from anywhere."
-  },
-  '76': {
-    name: 'Rinus VeeKay', flag: '🇳🇱', num: '76',
-    badges: [],
-    group: 'Home Turf',
-    reason: "Ed Carpenter lives in Indianapolis and races nowhere else. This is literally his home track, front yard, and entire annual racing calendar.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/76-Wedbush-SS.png',
-    fact: '"The Flying Dutchman" — became the youngest IndyCar polesitter at age 20. Has the raw speed to embarrass championship favorites, and ECR knows this track cold.'
-  },
-  '75': {
-    name: 'Takuma Sato', flag: '🇯🇵', num: '75',
-    badges: [{type:'w', label:'W×2'}],
-    group: 'Home Turf',
-    reason: "Ed Carpenter lives in Indianapolis and races nowhere else. This is literally his home track, front yard, and entire annual racing calendar.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/75-Amada-SS.png',
-    fact: "Two-time winner (2017, 2020) who races with the spirit of a kamikaze pilot. Former F1 driver. At 49, either wins or crashes spectacularly — there is no middle ground with Sato."
-  },
-  '33': {
-    name: 'Ed Carpenter', flag: '🇺🇸', num: '33',
-    badges: [],
-    group: 'Home Turf',
-    reason: "Ed Carpenter lives in Indianapolis and races nowhere else. This is literally his home track, front yard, and entire annual racing calendar.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/33-Slimfast-SS.png',
-    fact: "The only owner-driver who races exclusively at Indianapolis. Three poles. Zero wins. The most haunted man at the Speedway — and the most dangerous on his home track."
-  },
-  '06': {
-    name: 'Hélio Castroneves', flag: '🇧🇷', num: '06',
-    badges: [{type:'w', label:'W×4'}],
-    group: "Spider-Man's Web",
-    reason: 'Hélio Castroneves earned "Spider-Man" by climbing the catch fencing after every win. At 50, he\'s chasing an unprecedented 5th — and still doing it with a smile.',
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/06-Cliffs-SS.png',
-    fact: "Four-time winner (2001, 2002, 2009, 2021) and also a Dancing with the Stars champion. Nobody in motorsport history has won here more than four times — yet."
-  },
-  '21': {
-    name: 'Christian Rasmussen', flag: '🇩🇰', num: '21',
-    badges: [],
-    group: "Spider-Man's Web",
-    reason: 'Hélio Castroneves earned "Spider-Man" by climbing the catch fencing after every win. At 50, he\'s chasing an unprecedented 5th — and still doing it with a smile.',
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/21-Splenda-SS.png',
-    fact: "The quietest driver at the Speedway — until race day. Finished 6th in the 2025 Indy 500 and is methodically building toward a podium finish with Andretti Global."
-  },
-  '66': {
-    name: 'Marcus Armstrong', flag: '🇳🇿', num: '66',
-    badges: [],
-    group: "Spider-Man's Web",
-    reason: 'Hélio Castroneves earned "Spider-Man" by climbing the catch fencing after every win. At 50, he\'s chasing an unprecedented 5th — and still doing it with a smile.',
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/66-ACURA-SS.png',
-    fact: "Named IndyCar Rookie of the Year in 2023 and has been getting faster ever since. Part of the wave of New Zealanders quietly dominating American open-wheel racing."
-  },
-  '28': {
-    name: 'Marcus Ericsson', flag: '🇸🇪', num: '28',
-    badges: [{type:'w', label:'W'}],
-    group: "Spider-Man's Web",
-    reason: 'Hélio Castroneves earned "Spider-Man" by climbing the catch fencing after every win. At 50, he\'s chasing an unprecedented 5th — and still doing it with a smile.',
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/28-Phoenix-SS.png',
-    fact: "Won the 2022 Indy 500 by being in the right place during a perfectly-timed late caution. Knows that patience and strategy win at Indianapolis — and he's proven it."
-  },
-  '7': {
-    name: 'Christian Lundgaard', flag: '🇩🇰', num: '7',
-    badges: [],
-    group: 'Sleeping Giants',
-    reason: "Back-to-back winner Newgarden (P23) and 2018 champion Power (P19) are buried in this group. The most dangerous seven cars on the grid — do not sleep on Sleeping Giants.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/7-Velo-SS.png',
-    fact: "Underrated Dane who has been quicker at Indy every year. Quietly one of the most talented drivers in the field without the results to prove it — yet."
-  },
-  '26': {
-    name: 'Will Power', flag: '🇦🇺', num: '26',
-    badges: [{type:'w', label:'W'}],
-    group: 'Sleeping Giants',
-    reason: "Back-to-back winner Newgarden (P23) and 2018 champion Power (P19) are buried in this group. The most dangerous seven cars on the grid — do not sleep on Sleeping Giants.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/26-TWGAI-SS.png',
-    fact: "Holds the all-time Indy 500 qualifying speed record and won in 2018. Qualified P19. Do not tell him he can't win from the back — he'll prove you wrong by lap 100."
-  },
-  '6': {
-    name: 'Nolan Siegel', flag: '🇺🇸', num: '6',
-    badges: [],
-    group: 'Sleeping Giants',
-    reason: "Back-to-back winner Newgarden (P23) and 2018 champion Power (P19) are buried in this group. The most dangerous seven cars on the grid — do not sleep on Sleeping Giants.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/6-NTTDATA-SS.png',
-    fact: "Was running inside the top 10 in the final laps of the 2025 race when he crashed out. That's called motivation. Big McLaren talent in a fast car with a point to prove."
-  },
-  '45': {
-    name: 'Louis Foster', flag: '🇬🇧', num: '45',
-    badges: [],
-    group: 'Sleeping Giants',
-    reason: "Back-to-back winner Newgarden (P23) and 2018 champion Power (P19) are buried in this group. The most dangerous seven cars on the grid — do not sleep on Sleeping Giants.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/45-Droplight-SS.png',
-    fact: "2025 IndyCar Rookie of the Year making his Indianapolis 500 debut. British-made, McLaren-powered, and arriving with a chip on his shoulder the size of a Cadillac engine."
-  },
-  '31': {
-    name: 'Ryan Hunter-Reay', flag: '🇺🇸', num: '31',
-    badges: [{type:'w', label:'W'}],
-    group: 'Sleeping Giants',
-    reason: "Back-to-back winner Newgarden (P23) and 2018 champion Power (P19) are buried in this group. The most dangerous seven cars on the grid — do not sleep on Sleeping Giants.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/31-PrizePicks-SS.png',
-    fact: "2014 champion in one of sport's great emotional stories — his wife Andrea battled breast cancer the year he won. One of the most beloved figures in American racing history."
-  },
-  '2': {
-    name: 'Josef Newgarden', flag: '🇺🇸', num: '2',
-    badges: [{type:'w', label:'W×2'}],
-    group: 'Sleeping Giants',
-    reason: "Back-to-back winner Newgarden (P23) and 2018 champion Power (P19) are buried in this group. The most dangerous seven cars on the grid — do not sleep on Sleeping Giants.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/2-Shell-SS.png',
-    fact: "Back-to-back champion in 2023 and 2024, starting from P23. Penske's most complete driver. In IndyCar terms, P23 is P3 for Newgarden — he'll be in contention by lap 50."
-  },
-  '18': {
-    name: 'Romain Grosjean', flag: '🇫🇷', num: '18',
-    badges: [],
-    group: 'Sleeping Giants',
-    reason: "Back-to-back winner Newgarden (P23) and 2018 champion Power (P19) are buried in this group. The most dangerous seven cars on the grid — do not sleep on Sleeping Giants.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/18-BMAX-SS.png',
-    fact: 'Survived a 200mph fireball at the 2020 Bahrain F1 GP that left him with severe hand burns. Reinvented his career in IndyCar and races with, as he says, "nothing left to fear."'
-  },
-  '27': {
-    name: 'Kyle Kirkwood', flag: '🇺🇸', num: '27',
-    badges: [],
-    group: 'Long Shot Lottery',
-    reason: "Starting dead last through 25th — but someone wins from the back of the grid every single year. This is your chaos hedge, your conversation starter, and your wildcard.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/27-SamsClub-SS.png',
-    fact: "Consistent Andretti improver who quietly collects top-10s when conditions go sideways. Starting P25 — chaos is absolutely his friend."
-  },
-  '11': {
-    name: 'Katherine Legge', flag: '🇬🇧', num: '11',
-    badges: [],
-    group: 'Long Shot Lottery',
-    reason: "Starting dead last through 25th — but someone wins from the back of the grid every single year. This is your chaos hedge, your conversation starter, and your wildcard.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/11-elf-SS.png',
-    fact: "British barrier-breaker who also attempted the Indy 500/Coca-Cola 600 double in 2026. More racing miles in 24 hours than almost any human alive."
-  },
-  '47': {
-    name: 'Mick Schumacher', flag: '🇩🇪', num: '47',
-    badges: [{type:'r', label:'R'}],
-    group: 'Long Shot Lottery',
-    reason: "Starting dead last through 25th — but someone wins from the back of the grid every single year. This is your chaos hedge, your conversation starter, and your wildcard.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/47-ENVE-SS.png',
-    fact: "Son of seven-time F1 champion Michael Schumacher, making his Indy 500 debut. The most famous surname in motorsport takes on the biggest race in America."
-  },
-  '15': {
-    name: 'Graham Rahal', flag: '🇺🇸', num: '15',
-    badges: [],
-    group: 'Long Shot Lottery',
-    reason: "Starting dead last through 25th — but someone wins from the back of the grid every single year. This is your chaos hedge, your conversation starter, and your wildcard.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/15-UnitedRentals-SS.png',
-    fact: "Son of 1986 Indy 500 winner Bobby Rahal, running his own family's team. Has been agonizingly close to following his father's footsteps for over a decade."
-  },
-  '19': {
-    name: 'Dennis Hauger', flag: '🇳🇴', num: '19',
-    badges: [{type:'r', label:'R'}],
-    group: 'Long Shot Lottery',
-    reason: "Starting dead last through 25th — but someone wins from the back of the grid every single year. This is your chaos hedge, your conversation starter, and your wildcard.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/19-Nammo-SS.png',
-    fact: "Norwegian F2 standout making his oval racing debut in Prema's first-ever Indy 500 entry. Zero oval experience before this week. Chaos potential: extremely high."
-  },
-  '51': {
-    name: 'Jacob Abel', flag: '🇺🇸', num: '51',
-    badges: [{type:'r', label:'R'}],
-    group: 'Long Shot Lottery',
-    reason: "Starting dead last through 25th — but someone wins from the back of the grid every single year. This is your chaos hedge, your conversation starter, and your wildcard.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/51-TexasRoadhouse-SS.png',
-    fact: "Born and raised in Indianapolis, running his own family-funded car in the race he grew up watching from the infield. The purest Indy 500 story in the 2026 field."
-  },
-  '77': {
-    name: 'Sting Ray Robb', flag: '🇺🇸', num: '77',
-    badges: [],
-    group: 'Long Shot Lottery',
-    reason: "Starting dead last through 25th — but someone wins from the back of the grid every single year. This is your chaos hedge, your conversation starter, and your wildcard.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/77-Goodheart-SS.png',
-    fact: "His actual given name is Sting Ray, named after his grandfather's Corvette. Idaho native racing for the legendary AJ Foyt. The most American sentence in motorsport."
-  },
-  '4': {
-    name: 'Caio Collet', flag: '🇧🇷', num: '4',
-    badges: [{type:'r', label:'R'}],
-    group: 'Long Shot Lottery',
-    reason: "Starting dead last through 25th — but someone wins from the back of the grid every single year. This is your chaos hedge, your conversation starter, and your wildcard.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/4-Combitrans-SS.png',
-    fact: "Brazilian rookie who qualified impressively before a technical violation sent him to the back row. McLaren's wildcard with plenty of speed and everything to prove."
-  },
-  '24': {
-    name: 'Jack Harvey', flag: '🇬🇧', num: '24',
-    badges: [],
-    group: 'Long Shot Lottery',
-    reason: "Starting dead last through 25th — but someone wins from the back of the grid every single year. This is your chaos hedge, your conversation starter, and your wildcard.",
-    car: 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/24-INVST-SS.png',
-    fact: "British journeyman quietly starting at Indy every year since 2017. Never the loudest, never the flashiest — just reliable, consistent, and perpetually underappreciated."
-  }
+  '10': { name:'Alex Palou', flag:'🇪🇸', num:'10', badges:[{t:'w',l:'W'}], group:'El Jefe', reason:"Palou starts from pole as defending champion. There's only one boss at this race.", car:'10-DHL-SS', hs:'AlexPalou', fact:"Three-time IndyCar champion who won the 2025 Indy 500 from pole. If the race runs clean, he's the most likely person to repeat — and the most expensive group to own." },
+  '20': { name:'Alexander Rossi', flag:'🇺🇸', num:'20', badges:[{t:'w',l:'W'}], group:'Fuel Economy', reason:"Rossi won his first Indy 500 by literally coasting across the finish line after his car ran dry.", car:'20-JavaHouse-SS', hs:'AlexanderRossi', fact:"Won his debut Indy 500 in 2016 by running out of fuel and still winning. Former F1 reserve driver who found his calling at 500 miles per race." },
+  '12': { name:'David Malukas', flag:'🇺🇸', num:'12', badges:[], group:'Chi-Town Hustle', reason:"Malukas is Chicago's own hometown racer, grinding his way toward a breakthrough win.", car:'12-Verizon-SS', hs:'DavidMalukas', fact:"Born and raised in Chicago — one of the few American-born title contenders in the field. Finished runner-up in the 2025 Indy 500 and is absolutely due for that top step." },
+  '60': { name:'Felix Rosenqvist', flag:'🇸🇪', num:'60', badges:[], group:'Country Roads', reason:"Rosenqvist's #60 car sports a Morgan Wallen country music livery — the most visually charismatic car at the Speedway.", car:'60-SiriusXM-MorganWallen-SS', hs:'FelixRosenqvist', fact:"Finished 2nd in the 2023 Indy 500 and has been knocking on the door ever since. The Morgan Wallen livery means fans have been taking photos of this car all week." },
+  '14': { name:'Santino Ferrucci', flag:'🇺🇸', num:'14', badges:[], group:'Country Roads', reason:"Rosenqvist's #60 car sports a Morgan Wallen country music livery — the most visually charismatic car at the Speedway.", car:'14-HFOT-SS', hs:'SantinoFerrucci', fact:"Rhode Islander who has quietly become one of the best pure oval racers in the field. Finished 3rd in 2023 and races without fear in the heaviest traffic on the grid." },
+  '5':  { name:"Pato O'Ward", flag:'🇲🇽', num:'5', badges:[], group:'Missile Launch', reason:'O\'Ward\'s nickname is "The Mexican Missile" — and Simpson is launching his IndyCar career from P7.', car:'5-Arrow-SS', hs:'PatoOWard', fact:"Has finished 2nd at Indy twice and is statistically overdue for a win. His McLaren deal even scored him a test in a real Formula 1 car. The most frustrated nearly-man at the Brickyard." },
+  '8':  { name:'Kyffin Simpson', flag:'🇰🇾', num:'8', badges:[], group:'Missile Launch', reason:'O\'Ward\'s nickname is "The Mexican Missile" — and Simpson is launching his IndyCar career from P7.', car:'8-Sunoco-SS', hs:'KyffinSimpson', fact:"Carries one of the most unique passports in motorsport — a Cayman Islander making his third Indy 500 start. Won the Indy Lights championship before joining the Chip Ganassi powerhouse." },
+  '23': { name:'Conor Daly', flag:'🇺🇸', num:'23', badges:[], group:'Ice Ice Baby', reason:'Dixon\'s nickname is "The Iceman" — two ice-cold Kiwis and one famously charismatic American walk into a race.', car:'23-Kingspan-SS', hs:'ConorDaly', fact:"Son of TV racing analyst Derek Daly. Once crowdfunded his entire Indy 500 entry from fans. Universally considered the most fun driver in the paddock — and he's quicker than you think." },
+  '3':  { name:'Scott McLaughlin', flag:'🇳🇿', num:'3', badges:[], group:'Ice Ice Baby', reason:'Dixon\'s nickname is "The Iceman" — two ice-cold Kiwis and one famously charismatic American walk into a race.', car:'3-Pennzoil-SS', hs:'ScottMcLaughlin', fact:"Three-time V8 Supercars champion who traded Australian touring car wars for American open-wheel. Won the 2021 Indy 500 Rookie of the Year and improves every single year." },
+  '9':  { name:'Scott Dixon', flag:'🇳🇿', num:'9', badges:[{t:'w',l:'W'}], group:'Ice Ice Baby', reason:'Dixon\'s nickname is "The Iceman" — two ice-cold Kiwis and one famously charismatic American walk into a race.', car:'9-PNCBank-SS', hs:'ScottDixon', fact:"Six-time IndyCar champion with a career spanning over 20 years at Indy. At 45, he still doesn't make mistakes. If the race gets strategic, Dixon wins from anywhere." },
+  '76': { name:'Rinus VeeKay', flag:'🇳🇱', num:'76', badges:[], group:'Home Turf', reason:"Ed Carpenter lives in Indianapolis and races nowhere else. This is literally his home track, front yard, and entire annual racing calendar.", car:'76-Wedbush-SS', hs:'RinusVeeKay', fact:'"The Flying Dutchman" — became the youngest IndyCar polesitter at age 20. Has the raw speed to embarrass championship favorites, and ECR knows this track cold.' },
+  '75': { name:'Takuma Sato', flag:'🇯🇵', num:'75', badges:[{t:'w',l:'W×2'}], group:'Home Turf', reason:"Ed Carpenter lives in Indianapolis and races nowhere else. This is literally his home track, front yard, and entire annual racing calendar.", car:'75-Amada-SS', hs:'TakumaSato', fact:"Two-time winner (2017, 2020) who races with the spirit of a kamikaze pilot. Former F1 driver. At 49, either wins or crashes spectacularly — there is no middle ground with Sato." },
+  '33': { name:'Ed Carpenter', flag:'🇺🇸', num:'33', badges:[], group:'Home Turf', reason:"Ed Carpenter lives in Indianapolis and races nowhere else. This is literally his home track, front yard, and entire annual racing calendar.", car:'33-Slimfast-SS', hs:'EdCarpenter', fact:"The only owner-driver who races exclusively at Indianapolis. Three poles. Zero wins. The most haunted man at the Speedway — and the most dangerous on his home track." },
+  '06': { name:'Hélio Castroneves', flag:'🇧🇷', num:'06', badges:[{t:'w',l:'W×4'}], group:"Spider-Man's Web", reason:'Hélio Castroneves earned "Spider-Man" by climbing the catch fencing after every win. At 50, he\'s chasing an unprecedented 5th — and still doing it with a smile.', car:'06-Cliffs-SS', hs:'HelioCastroneves', fact:"Four-time winner (2001, 2002, 2009, 2021) and also a Dancing with the Stars champion. Nobody in motorsport history has won here more than four times — yet." },
+  '21': { name:'Christian Rasmussen', flag:'🇩🇰', num:'21', badges:[], group:"Spider-Man's Web", reason:'Hélio Castroneves earned "Spider-Man" by climbing the catch fencing after every win. At 50, he\'s chasing an unprecedented 5th — and still doing it with a smile.', car:'21-Splenda-SS', hs:'ChristianRasmussen', fact:"The quietest driver at the Speedway — until race day. Finished 6th in the 2025 Indy 500 and is methodically building toward a podium finish with Andretti Global." },
+  '66': { name:'Marcus Armstrong', flag:'🇳🇿', num:'66', badges:[], group:"Spider-Man's Web", reason:'Hélio Castroneves earned "Spider-Man" by climbing the catch fencing after every win. At 50, he\'s chasing an unprecedented 5th — and still doing it with a smile.', car:'66-ACURA-SS', hs:'MarcusArmstrong', fact:"Named IndyCar Rookie of the Year in 2023 and has been getting faster ever since. Part of the wave of New Zealanders quietly dominating American open-wheel racing." },
+  '28': { name:'Marcus Ericsson', flag:'🇸🇪', num:'28', badges:[{t:'w',l:'W'}], group:"Spider-Man's Web", reason:'Hélio Castroneves earned "Spider-Man" by climbing the catch fencing after every win. At 50, he\'s chasing an unprecedented 5th — and still doing it with a smile.', car:'28-Phoenix-SS', hs:'MarcusEricsson', fact:"Won the 2022 Indy 500 by being in the right place during a perfectly-timed late caution. Knows that patience and strategy win at Indianapolis — and he's proven it." },
+  '7':  { name:'Christian Lundgaard', flag:'🇩🇰', num:'7', badges:[], group:'Sleeping Giants', reason:"Back-to-back winner Newgarden (P23) and 2018 champion Power (P19) are buried in this group. The most dangerous seven cars on the grid — do not sleep on Sleeping Giants.", car:'7-Velo-SS', hs:'ChristianLundgaard', fact:"Underrated Dane who has been quicker at Indy every year. Quietly one of the most talented drivers in the field without the results to prove it — yet." },
+  '26': { name:'Will Power', flag:'🇦🇺', num:'26', badges:[{t:'w',l:'W'}], group:'Sleeping Giants', reason:"Back-to-back winner Newgarden (P23) and 2018 champion Power (P19) are buried in this group. The most dangerous seven cars on the grid — do not sleep on Sleeping Giants.", car:'26-TWGAI-SS', hs:'WillPower', fact:"Holds the all-time Indy 500 qualifying speed record and won in 2018. Qualified P19. Do not tell him he can't win from the back — he'll prove you wrong by lap 100." },
+  '6':  { name:'Nolan Siegel', flag:'🇺🇸', num:'6', badges:[], group:'Sleeping Giants', reason:"Back-to-back winner Newgarden (P23) and 2018 champion Power (P19) are buried in this group. The most dangerous seven cars on the grid — do not sleep on Sleeping Giants.", car:'6-NTTDATA-SS', hs:'NolanSiegel', fact:"Was running inside the top 10 in the final laps of the 2025 race when he crashed out. That's called motivation. Big McLaren talent in a fast car with a point to prove." },
+  '45': { name:'Louis Foster', flag:'🇬🇧', num:'45', badges:[], group:'Sleeping Giants', reason:"Back-to-back winner Newgarden (P23) and 2018 champion Power (P19) are buried in this group. The most dangerous seven cars on the grid — do not sleep on Sleeping Giants.", car:'45-Droplight-SS', hs:'LouisFoster', fact:"2025 IndyCar Rookie of the Year making his Indianapolis 500 debut. British-made, McLaren-powered, and arriving with a chip on his shoulder the size of a Cadillac engine." },
+  '31': { name:'Ryan Hunter-Reay', flag:'🇺🇸', num:'31', badges:[{t:'w',l:'W'}], group:'Sleeping Giants', reason:"Back-to-back winner Newgarden (P23) and 2018 champion Power (P19) are buried in this group. The most dangerous seven cars on the grid — do not sleep on Sleeping Giants.", car:'31-PrizePicks-SS', hs:'RyanHunterReay', fact:"2014 champion in one of sport's great emotional stories — his wife Andrea battled breast cancer the year he won. One of the most beloved figures in American racing history." },
+  '2':  { name:'Josef Newgarden', flag:'🇺🇸', num:'2', badges:[{t:'w',l:'W×2'}], group:'Sleeping Giants', reason:"Back-to-back winner Newgarden (P23) and 2018 champion Power (P19) are buried in this group. The most dangerous seven cars on the grid — do not sleep on Sleeping Giants.", car:'2-Shell-SS', hs:'JosefNewgarden', fact:"Back-to-back champion in 2023 and 2024, starting from P23. Penske's most complete driver. In IndyCar terms, P23 is P3 for Newgarden — he'll be in contention by lap 50." },
+  '18': { name:'Romain Grosjean', flag:'🇫🇷', num:'18', badges:[], group:'Sleeping Giants', reason:"Back-to-back winner Newgarden (P23) and 2018 champion Power (P19) are buried in this group. The most dangerous seven cars on the grid — do not sleep on Sleeping Giants.", car:'18-BMAX-SS', hs:'RomainGrosjean', fact:'Survived a 200mph fireball at the 2020 Bahrain F1 GP that left him with severe hand burns. Reinvented his career in IndyCar and races with, as he says, "nothing left to fear."' },
+  '27': { name:'Kyle Kirkwood', flag:'🇺🇸', num:'27', badges:[], group:'Long Shot Lottery', reason:"Starting dead last through 25th — but someone wins from the back of the grid every single year. This is your chaos hedge, your conversation starter, and your wildcard.", car:'27-SamsClub-SS', hs:'KyleKirkwood', fact:"Consistent Andretti improver who quietly collects top-10s when conditions go sideways. Starting P25 — chaos is absolutely his friend." },
+  '11': { name:'Katherine Legge', flag:'🇬🇧', num:'11', badges:[], group:'Long Shot Lottery', reason:"Starting dead last through 25th — but someone wins from the back of the grid every single year. This is your chaos hedge, your conversation starter, and your wildcard.", car:'11-elf-SS', hs:'KatherineLegge', fact:"British barrier-breaker who also attempted the Indy 500/Coca-Cola 600 double in 2026. More racing miles in 24 hours than almost any human alive." },
+  '47': { name:'Mick Schumacher', flag:'🇩🇪', num:'47', badges:[{t:'r',l:'R'}], group:'Long Shot Lottery', reason:"Starting dead last through 25th — but someone wins from the back of the grid every single year. This is your chaos hedge, your conversation starter, and your wildcard.", car:'47-ENVE-SS', hs:'MickSchumacher', fact:"Son of seven-time F1 champion Michael Schumacher, making his Indy 500 debut. The most famous surname in motorsport takes on the biggest race in America." },
+  '15': { name:'Graham Rahal', flag:'🇺🇸', num:'15', badges:[], group:'Long Shot Lottery', reason:"Starting dead last through 25th — but someone wins from the back of the grid every single year. This is your chaos hedge, your conversation starter, and your wildcard.", car:'15-UnitedRentals-SS', hs:'GrahamRahal', fact:"Son of 1986 Indy 500 winner Bobby Rahal, running his own family's team. Has been agonizingly close to following his father's footsteps for over a decade." },
+  '19': { name:'Dennis Hauger', flag:'🇳🇴', num:'19', badges:[{t:'r',l:'R'}], group:'Long Shot Lottery', reason:"Starting dead last through 25th — but someone wins from the back of the grid every single year. This is your chaos hedge, your conversation starter, and your wildcard.", car:'19-Nammo-SS', hs:'DennisHauger', fact:"Norwegian F2 standout making his oval racing debut in Prema's first-ever Indy 500 entry. Zero oval experience before this week. Chaos potential: extremely high." },
+  '51': { name:'Jacob Abel', flag:'🇺🇸', num:'51', badges:[{t:'r',l:'R'}], group:'Long Shot Lottery', reason:"Starting dead last through 25th — but someone wins from the back of the grid every single year. This is your chaos hedge, your conversation starter, and your wildcard.", car:'51-TexasRoadhouse-SS', hs:'JacobAbel', fact:"Born and raised in Indianapolis, running his own family-funded car in the race he grew up watching from the infield. The purest Indy 500 story in the 2026 field." },
+  '77': { name:'Sting Ray Robb', flag:'🇺🇸', num:'77', badges:[], group:'Long Shot Lottery', reason:"Starting dead last through 25th — but someone wins from the back of the grid every single year. This is your chaos hedge, your conversation starter, and your wildcard.", car:'77-Goodheart-SS', hs:'StingRayRobb', fact:"His actual given name is Sting Ray, named after his grandfather's Corvette. Idaho native racing for the legendary AJ Foyt. The most American sentence in motorsport." },
+  '4':  { name:'Caio Collet', flag:'🇧🇷', num:'4', badges:[{t:'r',l:'R'}], group:'Long Shot Lottery', reason:"Starting dead last through 25th — but someone wins from the back of the grid every single year. This is your chaos hedge, your conversation starter, and your wildcard.", car:'4-Combitrans-SS', hs:'CaioCollet', fact:"Brazilian rookie who qualified impressively before a technical violation sent him to the back row. McLaren's wildcard with plenty of speed and everything to prove." },
+  '24': { name:'Jack Harvey', flag:'🇬🇧', num:'24', badges:[], group:'Long Shot Lottery', reason:"Starting dead last through 25th — but someone wins from the back of the grid every single year. This is your chaos hedge, your conversation starter, and your wildcard.", car:'24-INVST-SS', hs:'JackHarvey', fact:"British journeyman quietly starting at Indy every year since 2017. Never the loudest, never the flashiest — just reliable, consistent, and perpetually underappreciated." }
 };
 
-const backdrop = document.getElementById('backdrop');
-const sheet    = document.getElementById('sheet');
+const CAR_BASE = 'https://www.indycar.com/-/media/IndyCar/Cars/2026/IndyCar-Series/Liveries/Indy500/';
 
 function openDriver(num) {
   const d = DRIVERS[num];
   if (!d) return;
 
-  document.getElementById('modal-car').src = d.car;
-  document.getElementById('modal-car').style.display = '';
+  const hs = document.getElementById('modal-headshot');
+  hs.src = HS + d.hs + '.png';
+  hs.alt = d.name;
+  hs.className = 'modal-headshot';
+  hs.onerror = () => { hs.className = 'modal-headshot hidden'; };
+
+  const car = document.getElementById('modal-car');
+  car.src = CAR_BASE + d.car + '.png';
+  car.style.display = '';
+
   document.getElementById('modal-num').textContent  = '#' + d.num;
   document.getElementById('modal-name').textContent = d.name;
   document.getElementById('modal-flag').textContent = d.flag;
@@ -897,38 +583,55 @@ function openDriver(num) {
   document.getElementById('modal-reason').textContent = d.reason;
   document.getElementById('modal-fact').textContent   = d.fact;
 
-  const badgeWrap = document.getElementById('modal-badges');
-  badgeWrap.innerHTML = '';
+  const wrap = document.getElementById('modal-badges');
+  wrap.innerHTML = '';
   d.badges.forEach(b => {
-    const span = document.createElement('span');
-    span.className = 'badge badge-' + b.type;
-    span.textContent = b.label;
-    badgeWrap.appendChild(span);
+    const s = document.createElement('span');
+    s.className = 'badge badge-' + b.t;
+    s.textContent = b.l;
+    wrap.appendChild(s);
   });
 
-  backdrop.classList.add('open');
-  sheet.scrollTop = 0;
+  openModal('driver-backdrop', 'driver-sheet');
+}
+
+function openInfoModal(type) {
+  document.getElementById('panel-how').style.display    = type === 'how'    ? '' : 'none';
+  document.getElementById('panel-payout').style.display = type === 'payout' ? '' : 'none';
+  openModal('info-backdrop', 'info-sheet');
+}
+
+function openModal(backdropId, sheetId) {
+  document.getElementById(backdropId).classList.add('open');
+  document.getElementById(sheetId).scrollTop = 0;
   document.body.style.overflow = 'hidden';
 }
 
-function closeModal() {
-  backdrop.classList.remove('open');
+function closeModal(backdropId) {
+  document.getElementById(backdropId).classList.remove('open');
   document.body.style.overflow = '';
 }
 
-function handleBackdropClick(e) {
-  if (e.target === backdrop) closeModal();
+function handleBackdropClick(e, backdropId) {
+  if (e.target.id === backdropId) closeModal(backdropId);
 }
 
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeModal('driver-backdrop');
+    closeModal('info-backdrop');
+  }
+});
 
-// Swipe-down to close
-let touchStartY = 0;
-sheet.addEventListener('touchstart', e => { touchStartY = e.touches[0].clientY; }, { passive: true });
-sheet.addEventListener('touchend', e => {
-  const delta = e.changedTouches[0].clientY - touchStartY;
-  if (delta > 80 && sheet.scrollTop === 0) closeModal();
-}, { passive: true });
+['driver-sheet','info-sheet'].forEach(id => {
+  let startY = 0;
+  const el = document.getElementById(id);
+  const backdropId = id === 'driver-sheet' ? 'driver-backdrop' : 'info-backdrop';
+  el.addEventListener('touchstart', e => { startY = e.touches[0].clientY; }, { passive: true });
+  el.addEventListener('touchend',   e => {
+    if (e.changedTouches[0].clientY - startY > 80 && el.scrollTop === 0) closeModal(backdropId);
+  }, { passive: true });
+});
 </script>
 </body>
 </html>
